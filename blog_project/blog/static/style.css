@@ -1,0 +1,26 @@
+body {
+    background-color: #FAFAFA;
+}
+.contanier {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.left-screen {
+    background-color: white;
+    
+    width: 350px;
+    height: 1000px;
+    
+}
+.right-screen{
+    background-color: white;
+    width: 750px;
+    height: 1000px;
+}
+.text-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    color: #CACACA;
+}

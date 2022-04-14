@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LikeLion 10th Blog project</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    {% for blog in blogs %}
+    <div class="contanier">
+        <div class="left-screen"></div>
+        <div class="right-screen">
+            <h1 class="title">LikeLion 10th Blog project</h1>
+            <br />
+            <p>전체보기</p>
+            <p class="text-title">글 제목</p>
+            <hr/>
+            <h5>{{blog.title}}</h5> 
+            
+            <a href="{% url 'new' %}" style="text-decoration:none; color:black">새 글 작성하기</a>
+            
+            <div>
+                <a href="{% url 'detail' blog.id%}">
+                    
+                {{blog.created_at}}
+                <p>{{blog.summary}}</p>
+            </a>
+            </div>
+            <br />
+            {% endfor %}
+        </div>
+        
+    </div>
+    
+</body>
+</html>
