@@ -1,5 +1,4 @@
-{% load static %}
-
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,32 +8,29 @@
     <title>LikeLion 10th Blog project</title>
     <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
+
 <body>
-    {% for blog in blogs %}
+    
     <div class="contanier">
         <div class="left-screen"></div>
         <div class="right-screen">
             <h1 class="title">LikeLion 10th Blog project</h1>
             <br />
             <p>전체보기</p>
-            <p class="text-title">글 제목</p>
-            <hr/>
-            <h5>{{blog.title}}</h5> 
-            
-            <a href="{% url 'new' %}" style="text-decoration:none; color:black">새 글 작성하기</a>
-            
             <div>
-                <a href="{% url 'detail' blog.id%}">
-                    
-                {{blog.created_at}}
-                <p>{{blog.summary}}</p>
-            </a>
+                <span class="text-title">글 제목</span>
+                <span style="float: right;">작성일자</span>
             </div>
-            <br />
+            <hr/>
+            {% for blog in blogs %}
+            <div class="blog-title">
+                <span class="blog-title-small" >{{blog.title}}</span> 
+                <span class="blog-created-small" style="float: right;">{{blog.created_at}}</span>
+            </div>
             {% endfor %}
+            <a href="{% url 'new' %}" style="text-decoration:none; color:black">새 글 작성하기</a>
         </div>
-        
     </div>
-    
 </body>
 </html>
+
